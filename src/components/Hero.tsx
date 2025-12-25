@@ -44,6 +44,15 @@ export default function Hero() {
                         <a href="#services" className={styles.secondaryButton}>
                             View Services
                         </a>
+                        <a
+                            href="https://www.upwork.com/freelancers/~01a4bee13d5dcafff3"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.secondaryButton}
+                            style={{ border: '1px solid #108a00', color: '#108a00' }} // Upwork Greenish
+                        >
+                            Upwork Profile
+                        </a>
                     </div>
                 </motion.div>
 
