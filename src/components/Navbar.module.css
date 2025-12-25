@@ -1,0 +1,72 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    z-index: 50;
+    backdrop-filter: blur(12px);
+    background-color: rgba(var(--background-rgb), 0.8);
+    /* We need to define rgb vars if we want alpha, or just use a solid with opacity if variables are hex */
+    /* Fallback for now using hex with generic opacity */
+    background-color: var(--background);
+    /* Will override with transparent version if possible, or use module composition */
+    border-bottom: 1px solid var(--border);
+}
+
+/* Better glassmorphism needs RGBA. For now, solid with blur or just var(--background) with opacity in component style */
+.navbarGlass {
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: -0.025em;
+    color: var(--foreground);
+}
+
+.navLinks {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.link {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--muted);
+    transition: color 0.2s;
+}
+
+.link:hover {
+    color: var(--foreground);
+}
+
+.mobileMenu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .navLinks {
+        display: none;
+    }
+
+    .mobileMenu {
+        display: block;
+    }
+}

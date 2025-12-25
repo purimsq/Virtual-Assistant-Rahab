@@ -1,0 +1,68 @@
+.section {
+    padding: 6rem 1.5rem;
+    background-color: var(--background);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    margin-bottom: 4rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    color: var(--muted);
+    font-size: 1.125rem;
+    max-width: 600px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+}
+
+.card {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.preview {
+    height: 240px;
+    background-color: var(--surface-hover);
+    position: relative;
+    overflow: hidden;
+}
+
+.info {
+    padding: 2rem;
+}
+
+.projectTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--foreground);
+}
+
+.projectDesc {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
