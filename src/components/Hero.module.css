@@ -144,7 +144,6 @@
     .content {
         align-items: center;
         order: 2;
-        /* Text below image on mobile usually looks better if image is hero, but spec said "Text starting left of it" implies desktop. On mobile, usually image first is standard for "Personal Portfolio". */
     }
 
     .imageWrapper {
@@ -154,5 +153,19 @@
 
     .title {
         font-size: 2.5rem;
+        /* Smaller font for mobile */
+    }
+
+    .profileImage {
+        width: 250px;
+        height: 250px;
+        /* Constrain image size on mobile */
+    }
+
+    .actions {
+        flex-direction: column;
+        /* Stack buttons on very small screens if needed, otherwise row is fine */
+        width: 100%;
+        align-items: center;
     }
 }
