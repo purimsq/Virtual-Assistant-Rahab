@@ -53,6 +53,15 @@ export default function Hero() {
                         >
                             Upwork Profile
                         </a>
+                        <a
+                            href="https://www.linkedin.com/in/rahab-kamau-504996186"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.secondaryButton}
+                            style={{ border: '1px solid #0077b5', color: '#0077b5' }} // LinkedIn Blue
+                        >
+                            LinkedIn
+                        </a>
                     </div>
                 </motion.div>
 
