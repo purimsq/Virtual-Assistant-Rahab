@@ -29,7 +29,9 @@ export default function Navbar() {
                 {/* Desktop Menu */}
                 <div className={styles.navLinks}>
                     <Link href="#services" className={styles.link}>Services</Link>
+                    <Link href="#certificates" className={styles.link}>Certifications</Link>
                     <Link href="#work" className={styles.link}>Work</Link>
+                    <Link href="#resume" className={styles.link}>Resume</Link>
                     <Link href="#contact" className={styles.link}>Contact</Link>
                     <ThemeToggle />
                 </div>
@@ -53,7 +55,9 @@ export default function Navbar() {
                             exit={{ opacity: 0, y: -20 }}
                         >
                             <Link href="#services" className={styles.mobileLink} onClick={closeMenu}>Services</Link>
+                            <Link href="#certificates" className={styles.mobileLink} onClick={closeMenu}>Certifications</Link>
                             <Link href="#work" className={styles.mobileLink} onClick={closeMenu}>Work</Link>
+                            <Link href="#resume" className={styles.mobileLink} onClick={closeMenu}>Resume</Link>
                             <Link href="#contact" className={styles.mobileLink} onClick={closeMenu}>Contact</Link>
                             <div style={{ marginTop: '1rem' }}>
                                 <ThemeToggle />

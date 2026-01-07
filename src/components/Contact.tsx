@@ -91,7 +91,7 @@ export default function Contact() {
 
                         <div className={styles.contactInfo}>
                             <div style={{ fontSize: '0.9rem', color: 'var(--muted)' }}>
-                                You can also email directly at <a href="mailto:rahabkamau778@gmail.com" style={{ textDecoration: 'underline' }}>rahabkamau778@gmail.com</a>
+                                You can also email directly at <a href="mailto:rahabkamauva@gmail.com" style={{ textDecoration: 'underline' }}>rahabkamauva@gmail.com</a>
                             </div>
                         </div>
                     </div>

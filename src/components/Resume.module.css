@@ -1,0 +1,239 @@
+.section {
+    padding: 2rem 1.5rem;
+    background-color: var(--background);
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+}
+
+/* The "Hidden" Dossier State */
+.dossier {
+    background: #2a2a2a;
+    /* Lighter than #1a1a1a */
+    border: 1px solid #444;
+    border-radius: 12px;
+    padding: 3rem;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dossier:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: var(--primary);
+}
+
+.dossierTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.dossierSubtitle {
+    color: var(--primary);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.revealButton {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dossier:hover .revealButton {
+    background: var(--primary);
+    color: black;
+}
+
+/* The "Revealed" Resume Paper */
+.resumeWrapper {
+    background: #fdfdfd;
+    /* Off-white paper */
+    color: #1a1a1a;
+    /* Dark text for readability */
+    padding: 4rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2);
+    font-family: 'Times New Roman', Times, serif;
+    /* Boring font as requested */
+    position: relative;
+    margin-top: 2rem;
+    overflow: hidden;
+}
+
+/* Paper Texture Effect */
+.resumeWrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.resumeHeader {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #333;
+    padding-bottom: 2rem;
+}
+
+.name {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+}
+
+.role {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 0.5rem;
+}
+
+.contactInfo {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.sectionTitle {
+    font-size: 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.25rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    /* Dark blue/grey */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Use a simple bullet specifically for the section headers design if desired, or keep plain */
+
+.resumeContent p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.experienceItem,
+.educationItem {
+    margin-bottom: 1.5rem;
+}
+
+.jobHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.jobTitle {
+    font-weight: 800;
+    font-size: 1.05rem;
+}
+
+.company {
+    font-style: italic;
+    color: #555;
+}
+
+.date {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.bulletList {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.bulletList li {
+    margin-bottom: 0.25rem;
+}
+
+.unstyledLink {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.skillsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.closeButton {
+    display: block;
+    margin: 3rem auto 0;
+    background: #333;
+    color: white;
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: background 0.3s;
+}
+
+.closeButton:hover {
+    background: black;
+}
+
+@media (max-width: 768px) {
+    .resumeWrapper {
+        padding: 2rem;
+    }
+
+    .name {
+        font-size: 2rem;
+        /* Scale down name */
+    }
+
+    .dossier {
+        padding: 2rem;
+        /* Reduce padding */
+    }
+
+    .dossierTitle {
+        font-size: 1.5rem;
+    }
+
+    .jobHeader {
+        flex-direction: column;
+    }
+
+    .skillsGrid {
+        grid-template-columns: 1fr;
+    }
+}
