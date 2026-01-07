@@ -76,7 +76,7 @@ export default function Contact() {
                                 {status === 'sending' ? (
                                     'Sending...'
                                 ) : status === 'success' ? (
-                                    <>Sent! I will get back to you as soon <Check size={20} /></>
+                                    <>Sent! I will get back to you soon <Check size={20} /></>
                                 ) : (
                                     <>Send Request <Send size={20} /></>
                                 )}
