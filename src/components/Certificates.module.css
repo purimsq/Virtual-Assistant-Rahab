@@ -186,10 +186,7 @@
 }
 
 /* Modal Styles */
-.modalBackdrop {
-    /* Styles handled inline or via simple class for backdrop */
-    /* Only adding basic reset if needed, main styles in JSX for this iteration */
-}
+
 
 /* Mobile specific: Vertical Stack */
 @media (max-width: 768px) {

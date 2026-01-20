@@ -3,9 +3,11 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { ThemeToggle } from './ThemeToggle';
+import Image from 'next/image';
 import styles from './Navbar.module.css';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import logoImg from '../assets/logo.png';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +25,12 @@ export default function Navbar() {
         >
             <div className={styles.container}>
                 <Link href="/" className={styles.logo} onClick={closeMenu}>
-                    Rahab.
+                    <Image
+                        src={logoImg}
+                        alt="Rahab Logo"
+                        priority
+                        className={styles.logoImage}
+                    />
                 </Link>
 
                 {/* Desktop Menu */}

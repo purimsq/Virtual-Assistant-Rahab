@@ -29,12 +29,17 @@
 }
 
 .logo {
-    font-weight: 700;
-    font-size: 1.25rem;
-    letter-spacing: -0.025em;
-    color: var(--foreground);
+    display: flex;
+    align-items: center;
     z-index: 60;
     /* Ensure logo stays above mobile menu */
+}
+
+.logoImage {
+    width: auto;
+    height: 58px;
+    /* Maximize height within navbar */
+    object-fit: contain;
 }
 
 .navLinks {
