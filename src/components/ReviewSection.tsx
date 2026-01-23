@@ -41,6 +41,7 @@ export default function ReviewSection() {
 
     // Reply States
     const [expandedReviewId, setExpandedReviewId] = useState<string | null>(null);
+    const [successModalOpen, setSuccessModalOpen] = useState(false);
 
     // Email Validation Helper
     const validateEmail = (email: string) => {
@@ -185,12 +186,51 @@ export default function ReviewSection() {
                 replies: [autoReply] // Add the auto-reply immediately
             });
 
+            // --- NOTIFICATION LOGIC ---
+
+            const reviewData = {
+                name: newName,
+                email: newEmail,
+                rating: newRating,
+                text: newComment
+            };
+
+            const replyData = {
+                text: randomReply
+            };
+
+            // 1. Notify Admin (Immediately)
+            fetch('/api/notifications', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    type: 'admin',
+                    review: reviewData,
+                    reply: replyData
+                })
+            }).catch(err => console.error("Failed to notify admin:", err));
+
+            // 2. Notify Reviewer (Delayed by 2 minutes)
+            setTimeout(() => {
+                fetch('/api/notifications', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        type: 'reviewer',
+                        review: reviewData,
+                        reply: replyData
+                    })
+                }).catch(err => console.error("Failed to notify reviewer:", err));
+            }, 120000); // 2 minutes delay
+
+            // --------------------------
+
             setNewRating(0);
             setNewComment("");
             setNewName("");
             setNewEmail("");
             setShowForm(false);
-            alert("Thank you for your review!");
+            setSuccessModalOpen(true); // Show success modal instead of alert
 
         } catch (error) {
             console.error("Error adding review: ", error);
@@ -206,6 +246,43 @@ export default function ReviewSection() {
 
     return (
         <section className={styles.section}>
+            {/* Success Modal */}
+            <AnimatePresence>
+                {successModalOpen && (
+                    <motion.div
+                        className={styles.modalOverlay}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setSuccessModalOpen(false)}
+                    >
+                        <motion.div
+                            className={styles.modalContent}
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.8, opacity: 0 }}
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <div className={styles.modalIcon}>
+                                <div className={styles.modalCheckWrapper}>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3>Thank You!</h3>
+                            <p>Your review has been submitted successfully.</p>
+                            <button
+                                className={styles.modalCloseBtn}
+                                onClick={() => setSuccessModalOpen(false)}
+                            >
+                                Close
+                            </button>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
             <div className={styles.container}>
                 {/* Header Section */}
                 <div className={styles.header}>
