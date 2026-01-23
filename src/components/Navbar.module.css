@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 64px;
+    height: 80px;
     display: flex;
     align-items: center;
     z-index: 50;
@@ -37,7 +37,7 @@
 
 .logoImage {
     width: auto;
-    height: 58px;
+    height: 72px;
     /* Maximize height within navbar */
     object-fit: contain;
 }
@@ -70,7 +70,7 @@
 
 .mobileOverlay {
     position: fixed;
-    top: 64px;
+    top: 80px;
     /* Match Navbar height */
     left: 0;
     right: 0;
