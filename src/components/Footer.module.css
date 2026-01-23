@@ -1,9 +1,11 @@
 .footer {
-    padding: 3rem 1.5rem;
+    padding: 2rem 1.5rem;
+    /* Reduced padding */
     background-color: var(--surface);
     border-top: 1px solid var(--border);
     color: var(--muted);
-    font-size: 0.875rem;
+    font-size: 0.75rem;
+    /* Reduced from 0.875rem */
 }
 
 .container {

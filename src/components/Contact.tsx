@@ -47,7 +47,7 @@ export default function Contact() {
                 >
                     <h2 className={styles.title}>Ready to optimize your workflow?</h2>
                     <p className={styles.subtitle}>
-                        Enter your email and request. I'll get back to you shortly.
+                        Enter your email and request. I&apos;ll get back to you shortly.
                     </p>
 
                     <div className={styles.card}>

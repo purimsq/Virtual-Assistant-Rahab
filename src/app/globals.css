@@ -5,21 +5,26 @@
   --surface: #f3f4f6;
   --surface-hover: #e5e7eb;
   --border: #e5e7eb;
-  --primary: #10b981; /* Emerald 500 */
+  --primary: #10b981;
+  /* Emerald 500 */
   --primary-foreground: #ffffff;
   --muted: #6b7280;
-  
+
   --font-sans: 'Inter', sans-serif;
 }
 
 [data-theme='dark'] {
   /* Dark Mode */
-  --background: #09090b; /* Zinc 950 */
+  --background: #09090b;
+  /* Zinc 950 */
   --foreground: #ededef;
-  --surface: #18181b; /* Zinc 900 */
-  --surface-hover: #27272a; /* Zinc 800 */
+  --surface: #18181b;
+  /* Zinc 900 */
+  --surface-hover: #27272a;
+  /* Zinc 800 */
   --border: #27272a;
-  --primary: #10b981; /* Emerald 500 */
+  --primary: #10b981;
+  /* Emerald 500 */
   --primary-foreground: #ffffff;
   --muted: #a1a1aa;
 }
@@ -58,13 +63,58 @@ a {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--background);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--surface-hover);
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--muted);
+}
+
+@media print {
+
+  /* Hide standard page elements */
+  body>*:not(main) {
+    display: none !important;
+  }
+
+  /* Hide Navbar specifically if it's outside main */
+  nav,
+  footer,
+  .mobileOverlay,
+  .mobileMenuBtn {
+    display: none !important;
+  }
+
+  /* Hide ALL siblings of the Resume section if possible, or just force Resume visibility */
+  /* Since Resume is inside Main, we might need a more specific selector or just rely on the component hiding itself if isOpen is true. 
+     But actually, print media query should hide everything that is NOT the resume content. 
+  */
+
+  body {
+    background: white;
+  }
+
+  main>*:not(#resume) {
+    display: none !important;
+  }
+
+  /* Ensure #resume is visible */
+  #resume {
+    display: block !important;
+    visibility: visible !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 9999;
+  }
 }

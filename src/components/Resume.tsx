@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FileText, ChevronDown, Download, Briefcase, GraduationCap, Globe, User, Award } from 'lucide-react';
+import { FileText, Briefcase, GraduationCap, Globe, User, Award, Download } from 'lucide-react';
 import styles from './Resume.module.css';
 
 export default function Resume() {
@@ -32,6 +32,7 @@ export default function Resume() {
                     ) : (
                         <motion.div
                             key="resume"
+                            id="resume-content"
                             className={styles.resumeWrapper}
                             initial={{ opacity: 0, height: 0, scale: 0.95 }}
                             animate={{ opacity: 1, height: 'auto', scale: 1 }}
@@ -177,9 +178,55 @@ export default function Resume() {
                                 <p>English</p>
                             </div>
 
-                            <button className={styles.closeButton} onClick={() => setIsOpen(false)}>
-                                Close Resume
-                            </button>
+                            <div className={styles.buttonGroup}>
+                                <button className={styles.closeButton} onClick={() => setIsOpen(false)}>
+                                    Close Resume
+                                </button>
+                                <button className={styles.downloadButton} onClick={async () => {
+                                    const element = document.getElementById('resume-content');
+                                    if (!element) return;
+
+                                    // Dynamic import
+                                    const html2pdf = (await import('html2pdf.js')).default;
+
+                                    const opt = {
+                                        margin: [0.5, 0.5],
+                                        filename: 'Rahab_Kamau_Resume.pdf',
+                                        image: { type: 'jpeg', quality: 0.98 },
+                                        html2canvas: { scale: 2, useCORS: true },
+                                        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+                                    };
+
+                                    // Clone to manipulate for PDF (remove icons/buttons)
+                                    const clone = element.cloneNode(true) as HTMLElement;
+
+                                    // Remove buttons from clone
+                                    const buttons = clone.querySelectorAll('button');
+                                    buttons.forEach(btn => btn.remove());
+
+                                    // Remove .buttonGroup from clone
+                                    const btnGroups = clone.querySelectorAll(`.${styles.buttonGroup}`);
+                                    btnGroups.forEach(grp => grp.remove());
+
+                                    // HIDE ICONS in clone 
+                                    // (Assuming icons are SVGs or have specific classes. Lucide icons are SVGs)
+                                    const icons = clone.querySelectorAll('svg');
+                                    icons.forEach(icon => icon.style.display = 'none');
+
+                                    // Apply PDF specific styles to clone
+                                    clone.style.padding = '2rem';
+                                    clone.style.background = 'white';
+                                    clone.style.color = 'black';
+                                    clone.style.boxShadow = 'none';
+                                    clone.style.maxWidth = '100%';
+                                    clone.style.margin = '0';
+
+                                    // Generate
+                                    html2pdf().set(opt).from(clone).save();
+                                }}>
+                                    <Download size={18} /> Download PDF
+                                </button>
+                            </div>
                         </motion.div>
                     )}
                 </AnimatePresence>

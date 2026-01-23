@@ -1,0 +1,32 @@
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--foreground);
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    margin-left: -3rem;
+    /* Moved further left */
+    /* Move a bit to the left visually */
+}
+
+.backLink:hover {
+    background-color: var(--border);
+    transform: translateX(-2px);
+}
+
+@media (max-width: 768px) {
+    .backLink {
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+        background-color: var(--surface);
+        /* Ensure visible on mobile */
+    }
+}

@@ -192,48 +192,196 @@
     gap: 1rem;
 }
 
+.buttonGroup {
+    display: flex;
+    justify-content: space-between;
+    /* Close Left, Download Right */
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
 .closeButton {
-    display: block;
-    margin: 3rem auto 0;
     background: #333;
     color: white;
     border: none;
-    padding: 1rem 3rem;
-    font-size: 1rem;
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     transition: background 0.3s;
+    /* Removed block margins */
 }
 
-.closeButton:hover {
+.downloadButton {
+    background-color: var(--foreground);
+    color: var(--background);
+    border: none;
+    padding: 1rem 2rem;
+    /* Match Close Button */
+    font-size: 0.9rem;
+    /* Match Close Button */
+    font-weight: normal;
+    /* Match Close style */
+    text-transform: uppercase;
+    /* Match Close style */
+    letter-spacing: 0.1em;
+    /* Match Close style */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: opacity 0.2s;
+}
+
+.closeButton:hover,
+.downloadButton:hover {
+    opacity: 0.8;
     background: black;
 }
 
 @media (max-width: 768px) {
+    .section {
+        padding: 1rem 0.5rem;
+        /* Tight outer spacing */
+    }
+
     .resumeWrapper {
-        padding: 2rem;
+        padding: 1.25rem;
+        /* Much tighter internal padding */
+        margin-top: 1rem;
     }
 
     .name {
-        font-size: 2rem;
-        /* Scale down name */
+        font-size: 1.6rem;
+        /* Smaller title */
+        margin-bottom: 0.25rem;
+    }
+
+    .role {
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .resumeHeader {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+    }
+
+    .sectionTitle {
+        font-size: 0.95rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Highlights Section - Single Column List, Compact */
+    .skillsGrid {
+        grid-template-columns: 1fr;
+        /* Single column stack */
+        gap: 0.5rem;
+        /* Small space between lists */
+    }
+
+    .skillsGrid .bulletList {
+        padding-left: 0.75rem;
+        margin-bottom: 0;
+    }
+
+    .skillsGrid li {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        margin-bottom: 0.25rem;
+    }
+
+    /* General Lists */
+    .bulletList {
+        padding-left: 1rem;
+        font-size: 0.85rem;
+    }
+
+    .bulletList li {
+        margin-bottom: 0.2rem;
+    }
+
+    /* Experience/Education spacing */
+    .experienceItem,
+    .educationItem {
+        margin-bottom: 1rem;
+    }
+
+    .jobHeader {
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 0.25rem;
+    }
+
+    .jobTitle {
+        font-size: 0.95rem;
     }
 
     .dossier {
-        padding: 2rem;
-        /* Reduce padding */
+        padding: 1.5rem;
     }
 
     .dossierTitle {
         font-size: 1.5rem;
     }
 
-    .jobHeader {
-        flex-direction: column;
+    /* Mobile Buttons */
+    .buttonGroup {
+        flex-direction: column-reverse;
+        gap: 0.75rem;
+        padding: 1.5rem 0;
     }
 
-    .skillsGrid {
-        grid-template-columns: 1fr;
+    .closeButton,
+    .downloadButton {
+        width: 100%;
+        justify-content: center;
+        padding: 0.875rem 1.5rem;
+        /* Slightly reduced padding */
+    }
+}
+
+@media print {
+
+    /* Hide specific resume elements */
+    .sectionTitle svg {
+        display: none !important;
+    }
+
+    .buttonGroup {
+        display: none !important;
+    }
+
+    /* Ensure resume content is visible and clean */
+    .resumeWrapper {
+        display: block !important;
+        opacity: 1 !important;
+        height: auto !important;
+        transform: none !important;
+        box-shadow: none !important;
+        border: none !important;
+        overflow: visible !important;
+        background-color: white !important;
+        color: black !important;
+    }
+
+    .section {
+        padding: 0 !important;
+        background-color: white !important;
+    }
+
+    .container {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    body {
+        background-color: white !important;
+        color: black !important;
     }
 }

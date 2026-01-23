@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, MouseEvent, CSSProperties } from 'react';
+import { useState, useRef, MouseEvent } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { ArrowUpRight, X, CheckCircle } from 'lucide-react';
@@ -23,8 +23,16 @@ const certificates = [
     }
 ];
 
+interface Certificate {
+    title: string;
+    issuer: string;
+    date: string;
+    image: string;
+    description: string;
+}
+
 // Helper component for individual 3D Card
-function CertificateCard({ cert, onClick }: { cert: any; onClick: () => void }) {
+function CertificateCard({ cert, onClick }: { cert: Certificate; onClick: () => void }) {
     const ref = useRef<HTMLDivElement>(null);
 
     // Mouse position state for spotlight
@@ -88,9 +96,9 @@ function CertificateCard({ cert, onClick }: { cert: any; onClick: () => void }) 
                 <motion.div
                     className={styles.spotlight}
                     style={{
-                        ['--mouse-x' as any]: x,
-                        ['--mouse-y' as any]: y,
-                    }}
+                        '--mouse-x': x,
+                        '--mouse-y': y,
+                    } as React.CSSProperties}
                 />
 
                 <div className={styles.imageContainer}>
@@ -171,11 +179,15 @@ export default function Certificates() {
                                 >
                                     <X size={32} />
                                 </button>
-                                <img
-                                    src={selectedCert.image}
-                                    alt={selectedCert.title}
-                                    style={{ width: '100%', borderRadius: '8px', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)' }}
-                                />
+                                <div style={{ position: 'relative', width: '100%', height: 'auto', minHeight: '300px' }}>
+                                    <Image
+                                        src={selectedCert.image}
+                                        alt={selectedCert.title}
+                                        width={800}
+                                        height={600}
+                                        style={{ width: '100%', height: 'auto', borderRadius: '8px', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)' }}
+                                    />
+                                </div>
                                 <div style={{ marginTop: '1rem', color: 'white' }}>
                                     <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>{selectedCert.title}</h3>
                                     <p style={{ color: '#9ca3af' }}>{selectedCert.description}</p>

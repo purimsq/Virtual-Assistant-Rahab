@@ -4,6 +4,7 @@ import RecordsManagement from '@/components/RecordsManagement';
 import Certificates from '@/components/Certificates';
 import WorkSamples from '@/components/WorkSamples';
 import Resume from '@/components/Resume';
+import ReviewCTA from '@/components/ReviewCTA';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -15,6 +16,7 @@ export default function Home() {
       <RecordsManagement />
       <Certificates />
       <WorkSamples />
+      <ReviewCTA />
       <Resume />
       <Contact />
       <Footer />
