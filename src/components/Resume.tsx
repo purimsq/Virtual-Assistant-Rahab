@@ -5,6 +5,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FileText, Briefcase, GraduationCap, Globe, User, Award, Download } from 'lucide-react';
 import styles from './Resume.module.css';
 
+interface Html2PdfOptions {
+    margin?: number | [number, number] | [number, number, number, number];
+    filename?: string;
+    image?: { type: 'jpeg' | 'png' | 'webp'; quality: number };
+    html2canvas?: { scale: number; useCORS?: boolean };
+    jsPDF?: { unit?: string; format?: string | [number, number]; orientation?: 'portrait' | 'landscape' };
+}
+
 export default function Resume() {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -189,7 +197,7 @@ export default function Resume() {
                                     // Dynamic import
                                     const html2pdf = (await import('html2pdf.js')).default;
 
-                                    const opt = {
+                                    const opt: Html2PdfOptions = {
                                         margin: [0.5, 0.5],
                                         filename: 'Rahab_Kamau_Resume.pdf',
                                         image: { type: 'jpeg', quality: 0.98 },
