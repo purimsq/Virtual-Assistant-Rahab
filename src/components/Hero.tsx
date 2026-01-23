@@ -27,8 +27,8 @@ export default function Hero() {
                     </motion.span>
 
                     <h1 className={styles.title}>
-                        The <span className={styles.highlight}>Organized Chaos</span> <br />
-                        Manager.
+                        <span className={styles.highlight}>Executive Virtual</span> <br />
+                        Assistant.
                     </h1>
 
                     <p className={styles.description}>

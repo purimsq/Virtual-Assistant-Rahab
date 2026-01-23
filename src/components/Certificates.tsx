@@ -8,18 +8,25 @@ import styles from './Certificates.module.css';
 
 const certificates = [
     {
-        title: "Virtual Assistant Program",
-        issuer: "ALX",
-        date: "December 2025",
-        image: "/certificates/alx-certificate.jpg",
-        description: "10-week intensive program mastering virtual collaboration, project management tools, and digital workflow optimization."
+        title: "Executive Assistant Skills",
+        issuer: "Alison",
+        date: "May 28, 2025",
+        image: "/certificates/executive-assistant-skills.png",
+        description: "Comprehensive training in core executive support functions, including schedule management, communication, and organizational efficiency."
     },
     {
-        title: "Professional Virtual Assistance",
-        issuer: "AQskill",
-        date: "September 2025",
-        image: "/certificates/aqskill-certificate.png",
-        description: "Advanced certification in office administration, client communication, and remote team support protocols."
+        title: "Executive Assistant Mastery",
+        issuer: "Alison",
+        date: "January 9, 2026",
+        image: "/certificates/executive-assistant-mastery.png",
+        description: "Advanced mastery of executive assistance, focusing on strategic support, complex problem solving, and high-level office administration."
+    },
+    {
+        title: "Diploma in Administrative Procedures and Office Support",
+        issuer: "Alison",
+        date: "January 19, 2026",
+        image: "/certificates/diploma-admin-procedures.png",
+        description: "Professional diploma covering essential administrative procedures, office support systems, and business document production."
     }
 ];
 
