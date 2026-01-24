@@ -27,6 +27,20 @@ const certificates = [
         date: "January 19, 2026",
         image: "/certificates/diploma-admin-procedures.png",
         description: "Professional diploma covering essential administrative procedures, office support systems, and business document production."
+    },
+    {
+        title: "Virtual Assistant",
+        issuer: "ALX",
+        date: "May 2024",
+        image: "/certificates/alx-certificate.jpg",
+        description: "Intensive training in virtual assistance, utilizing modern digital tools for effective remote support."
+    },
+    {
+        title: "Virtual Assistant",
+        issuer: "AQskill",
+        date: "December 2023",
+        image: "/certificates/aqskill-certificate.png",
+        description: "Foundational certification in virtual assistance, covering core administrative skills and remote work best practices."
     }
 ];
 

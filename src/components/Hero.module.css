@@ -5,8 +5,8 @@
     justify-content: center;
     position: relative;
     overflow: hidden;
-    padding-top: 64px;
-    /* Navbar height */
+    padding-top: 100px;
+    /* Navbar height (80px) + 20px buffer */
 }
 
 /* Abstract Background Grid mimicking Prisma */

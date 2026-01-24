@@ -62,12 +62,11 @@ export default function Resume() {
                                     <h3 className={styles.sectionTitle}><User size={16} /> Summary</h3>
                                 </div>
                                 <p>
-                                    Highly organized and detail-oriented Virtual Assistant with over 5 years of experience in
-                                    administrative support, records management, and client communication. Expertise in
-                                    calendar coordination, email management, document control, and workflow automation
-                                    enhances operational efficiency. Proficient in Microsoft Office, Google Workspace, CRM
-                                    systems, and project management platforms to optimize processes. Demonstrated
-                                    ability to manage multiple priorities while safeguarding confidential records and
+                                    Highly organized and detail-oriented Virtual Assistant with over 5 years of experience in administrative
+                                    support, records management, and client communication. Expertise in calendar coordination, email
+                                    management, document control, and workflow automation enhances operational efficiency. Proficient in
+                                    Microsoft Office, Google Workspace, CRM systems, and project management platforms to optimize
+                                    processes. Demonstrated ability to manage multiple priorities while safeguarding confidential records and
                                     consistently delivering accurate results under tight deadlines.
                                 </p>
 
@@ -88,34 +87,33 @@ export default function Resume() {
                                     </li>
                                 </ul>
 
-                                {/* Highlights */}
+                                {/* Skills */}
                                 <div className={styles.sectionHeader}>
-                                    <h3 className={styles.sectionTitle}><Award size={16} /> Highlights</h3>
+                                    <h3 className={styles.sectionTitle}><Award size={16} /> Skills</h3>
                                 </div>
                                 <div className={styles.skillsGrid}>
                                     <ul className={styles.bulletList}>
                                         <li>Calendar & Schedule Management</li>
+                                        <li>Time Management & Prioritization</li>
                                         <li>Workflow Automation & Productivity Tools</li>
                                         <li>Confidentiality & Data Security</li>
-                                        <li>Digital Filing Systems & Document Control</li>
                                     </ul>
                                     <ul className={styles.bulletList}>
+                                        <li>Digital Filing Systems & Document Control</li>
                                         <li>Travel Planning & Logistics</li>
                                         <li>Email & Inbox Organization</li>
-                                        <li>Report Generation</li>
-                                        <li>Transcription Services</li>
                                     </ul>
                                 </div>
 
                                 {/* Experience */}
                                 <div className={styles.sectionHeader}>
-                                    <h3 className={styles.sectionTitle}><Briefcase size={16} /> Experience</h3>
+                                    <h3 className={styles.sectionTitle}><Briefcase size={16} /> Work History</h3>
                                 </div>
 
                                 <div className={styles.experienceItem}>
                                     <div className={styles.jobHeader}>
                                         <span>
-                                            <span className={styles.jobTitle}>Virtual Assistant</span> | <span className={styles.company}>Remote - Prosser, Washington</span>
+                                            <span className={styles.jobTitle}>Virtual Assistant</span> | <span className={styles.company}>Remote - Prosser</span>
                                         </span>
                                         <span className={styles.date}>01/2021 - Current</span>
                                     </div>
@@ -133,7 +131,7 @@ export default function Resume() {
                                 <div className={styles.experienceItem}>
                                     <div className={styles.jobHeader}>
                                         <span>
-                                            <span className={styles.jobTitle}>Records Management Clerk</span> | <span className={styles.company}>Remote - Prosser, Washington</span>
+                                            <span className={styles.jobTitle}>Records Management Clerk</span> | <span className={styles.company}>Remote - Prosser</span>
                                         </span>
                                         <span className={styles.date}>08/2020 - Current</span>
                                     </div>
@@ -157,33 +155,57 @@ export default function Resume() {
                                 <div className={styles.educationItem}>
                                     <div className={styles.jobHeader}>
                                         <span>
-                                            <span className={styles.jobTitle}>African Leadership Xcelerator (ALX)</span> | <span className={styles.company}>Virtual / Online</span>
+                                            <span className={styles.jobTitle}>Diploma in Administrative Procedures and Office Support</span> | <span className={styles.company}>Alison - Virtual / Online</span>
                                         </span>
-                                        <span className={styles.date}>12/2025</span>
+                                        <span className={styles.date}>01/2026</span>
                                     </div>
-                                    <p><strong>Certificate: Essential VA Skills</strong>: Organization, upward management, communication. <br />
-                                        <strong>Tech Tools</strong>: AI, productivity apps, workplace software. <br />
-                                        <strong>Client Management</strong>: Gatekeeping, decision-maker support, relationship building.</p>
+                                    <p>Completed a Diploma in Administrative Procedures and Office Support</p>
                                 </div>
 
                                 <div className={styles.educationItem}>
                                     <div className={styles.jobHeader}>
                                         <span>
-                                            <span className={styles.jobTitle}>Acquire a Skill (AQskill)</span> | <span className={styles.company}>Virtual / Online</span>
+                                            <span className={styles.jobTitle}>Executive Virtual Assistant Mastery</span> | <span className={styles.company}>Alison - Virtual / Online</span>
+                                        </span>
+                                        <span className={styles.date}>01/2026</span>
+                                    </div>
+                                    <p>Completed a Certificate in Executive Virtual Assistant Mastery</p>
+                                </div>
+
+                                <div className={styles.educationItem}>
+                                    <div className={styles.jobHeader}>
+                                        <span>
+                                            <span className={styles.jobTitle}>Virtual Assistant</span> | <span className={styles.company}>African Leadership Xcelerator (ALX) - Virtual / Online</span>
+                                        </span>
+                                        <span className={styles.date}>12/2025</span>
+                                    </div>
+                                    <p>Completed a Certificate in Virtual Assistant</p>
+                                </div>
+
+                                <div className={styles.educationItem}>
+                                    <div className={styles.jobHeader}>
+                                        <span>
+                                            <span className={styles.jobTitle}>Professional Virtual Assistant</span> | <span className={styles.company}>Acquire Skills - Virtual Online</span>
                                         </span>
                                         <span className={styles.date}>09/2025</span>
                                     </div>
-                                    <p><strong>Certificate Administrative Skills</strong>: Email management, scheduling, bookkeeping basics. <br />
-                                        <strong>Communication Skills</strong>: Professional verbal & written communication. <br />
-                                        <strong>Time Management</strong>: Productivity techniques, burnout prevention. <br />
-                                        <strong>Tech Tools</strong>: Google Drive, Zoom, Trello, Calendar.</p>
+                                </div>
+
+                                <div className={styles.educationItem}>
+                                    <div className={styles.jobHeader}>
+                                        <span>
+                                            <span className={styles.jobTitle}>Executive Virtual Assistant Skills</span> | <span className={styles.company}>Alison - Virtual / Online</span>
+                                        </span>
+                                        <span className={styles.date}>05/2025</span>
+                                    </div>
+                                    <p>Completed a Certificate in Executive Virtual Assistant Skills</p>
                                 </div>
 
                                 {/* Languages */}
                                 <div className={styles.sectionHeader}>
                                     <h3 className={styles.sectionTitle}> Languages</h3>
                                 </div>
-                                <p>English</p>
+                                <p>English - Full Professional</p>
                             </div>
 
                             <div className={styles.buttonGroup}>
@@ -222,12 +244,59 @@ export default function Resume() {
                                     icons.forEach(icon => icon.style.display = 'none');
 
                                     // Apply PDF specific styles to clone
-                                    clone.style.padding = '2rem';
+                                    clone.style.padding = '1.5rem'; // Reduced padding
                                     clone.style.background = 'white';
                                     clone.style.color = 'black';
                                     clone.style.boxShadow = 'none';
                                     clone.style.maxWidth = '100%';
                                     clone.style.margin = '0';
+                                    clone.style.fontSize = '12px'; // Smaller base font
+                                    clone.style.lineHeight = '1.4'; // Tighter leading
+
+                                    // Compact Header
+                                    const header = clone.querySelector('header') as HTMLElement;
+                                    if (header) {
+                                        header.style.marginBottom = '1rem';
+                                        header.style.textAlign = 'center';
+                                    }
+
+                                    const name = clone.querySelector(`.${styles.name}`) as HTMLElement;
+                                    if (name) name.style.fontSize = '2rem'; // Smaller Name
+
+                                    const role = clone.querySelector(`.${styles.role}`) as HTMLElement;
+                                    if (role) {
+                                        role.style.fontSize = '1.2rem';
+                                        role.style.marginTop = '0.25rem';
+                                    }
+
+                                    // Compact Headings
+                                    const headings = clone.querySelectorAll(`h3`);
+                                    headings.forEach(h => {
+                                        h.style.fontSize = '1.1rem';
+                                        h.style.marginBottom = '0.25rem';
+                                        h.style.marginTop = '1rem';
+                                        h.style.borderBottom = '1px solid #eee';
+                                        h.style.paddingBottom = '0.1rem';
+                                    });
+
+                                    // Compact Paragraphs & Lists
+                                    const paragraphs = clone.querySelectorAll('p');
+                                    paragraphs.forEach(p => p.style.marginBottom = '0.5rem');
+
+                                    const lists = clone.querySelectorAll('ul');
+                                    lists.forEach(ul => {
+                                        ul.style.marginBottom = '0.5rem';
+                                        ul.style.paddingLeft = '1.2rem';
+                                    });
+
+                                    const listItems = clone.querySelectorAll('li');
+                                    listItems.forEach(li => li.style.marginBottom = '0.1rem');
+
+                                    // Compact Job Headers
+                                    const jobHeaders = clone.querySelectorAll(`.${styles.jobHeader}`);
+                                    jobHeaders.forEach((jh) => {
+                                        (jh as HTMLElement).style.marginBottom = '0.25rem';
+                                    });
 
                                     // Generate
                                     html2pdf().set(opt).from(clone).save();
