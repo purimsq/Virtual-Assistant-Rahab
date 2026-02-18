@@ -44,13 +44,22 @@ export default function Hero() {
                             View Services
                         </a>
                         <a
-                            href="https://www.upwork.com/freelancers/~01a4bee13d5dcafff3"
+                            href="https://www.upwork.com/nx/find-work/best-matches/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className={styles.secondaryButton}
                             style={{ border: '1px solid #108a00', color: '#108a00' }} // Upwork Greenish
                         >
                             Upwork Profile
+                        </a>
+                        <a
+                            href="https://trello.com/b/ncRY2EfZ"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.secondaryButton}
+                            style={{ border: '1px solid #0079BF', color: '#0079BF' }} // Trello Blue
+                        >
+                            Trello Board
                         </a>
                         <a
                             href="https://www.linkedin.com/in/rahab-kamau-504996186"

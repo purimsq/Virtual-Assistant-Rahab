@@ -1,0 +1,90 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="15"/>
+      <feOffset dx="0" dy="15" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGradient)"/>
+
+  <!-- Main Calendar Container -->
+  <g transform="translate(100, 80)" filter="url(#shadow)">
+    <!-- Window Frame -->
+    <rect width="600" height="440" rx="16" fill="white"/>
+    
+    <!-- Header Bar -->
+    <path d="M0 16 C0 7 7 0 16 0 L584 0 C593 0 600 7 600 16 L600 60 L0 60 Z" fill="#1e293b"/>
+    
+    <!-- Window Controls -->
+    <circle cx="24" cy="30" r="6" fill="#ff5f57"/>
+    <circle cx="48" cy="30" r="6" fill="#febc2e"/>
+    <circle cx="72" cy="30" r="6" fill="#28c840"/>
+
+    <!-- Calendar Grid Background -->
+    <g transform="translate(20, 80)">
+      <!-- Vertical Lines -->
+      <line x1="112" y1="0" x2="112" y2="340" stroke="#f1f5f9" stroke-width="2"/>
+      <line x1="224" y1="0" x2="224" y2="340" stroke="#f1f5f9" stroke-width="2"/>
+      <line x1="336" y1="0" x2="336" y2="340" stroke="#f1f5f9" stroke-width="2"/>
+      <line x1="448" y1="0" x2="448" y2="340" stroke="#f1f5f9" stroke-width="2"/>
+
+      <!-- Horizontal Lines -->
+      <line x1="0" y1="68" x2="560" y2="68" stroke="#f1f5f9" stroke-width="2"/>
+      <line x1="0" y1="136" x2="560" y2="136" stroke="#f1f5f9" stroke-width="2"/>
+      <line x1="0" y1="204" x2="560" y2="204" stroke="#f1f5f9" stroke-width="2"/>
+      <line x1="0" y1="272" x2="560" y2="272" stroke="#f1f5f9" stroke-width="2"/>
+
+      <!-- Day Headers -->
+      <text x="56" y="-10" font-family="sans-serif" font-weight="bold" fill="#64748b" text-anchor="middle">MON</text>
+      <text x="168" y="-10" font-family="sans-serif" font-weight="bold" fill="#64748b" text-anchor="middle">TUE</text>
+      <text x="280" y="-10" font-family="sans-serif" font-weight="bold" fill="#64748b" text-anchor="middle">WED</text>
+      <text x="392" y="-10" font-family="sans-serif" font-weight="bold" fill="#64748b" text-anchor="middle">THU</text>
+      <text x="504" y="-10" font-family="sans-serif" font-weight="bold" fill="#64748b" text-anchor="middle">FRI</text>
+
+      <!-- Events -->
+      <!-- Mon: Red Event -->
+      <rect x="10" y="10" width="92" height="50" rx="6" fill="#fee2e2" stroke="#ef4444" stroke-width="2"/>
+      <text x="56" y="32" font-family="sans-serif" font-size="10" font-weight="bold" fill="#b91c1c" text-anchor="middle">Weekly Plan</text>
+      <text x="56" y="46" font-family="sans-serif" font-size="9" fill="#b91c1c" text-anchor="middle">9:00 AM</text>
+
+      <!-- Tue: Green Event -->
+      <rect x="122" y="80" width="92" height="70" rx="6" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+      <text x="168" y="110" font-family="sans-serif" font-size="10" font-weight="bold" fill="#15803d" text-anchor="middle">Operations</text>
+      <text x="168" y="124" font-family="sans-serif" font-size="9" fill="#15803d" text-anchor="middle">10:00 AM</text>
+
+      <!-- Wed: Blue Event (Long) -->
+      <rect x="234" y="40" width="92" height="80" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+      <text x="280" y="75" font-family="sans-serif" font-size="10" font-weight="bold" fill="#1d4ed8" text-anchor="middle">Performance</text>
+      <text x="280" y="89" font-family="sans-serif" font-size="9" fill="#1d4ed8" text-anchor="middle">Review</text>
+
+      <!-- Thu: Purple Event -->
+      <rect x="346" y="150" width="92" height="60" rx="6" fill="#f3e8ff" stroke="#a855f7" stroke-width="2"/>
+      <text x="392" y="175" font-family="sans-serif" font-size="10" font-weight="bold" fill="#7e22ce" text-anchor="middle">Stakeholder</text>
+      <text x="392" y="189" font-family="sans-serif" font-size="9" fill="#7e22ce" text-anchor="middle">Connect</text>
+
+      <!-- Fri: Orange Event -->
+      <rect x="458" y="240" width="92" height="50" rx="6" fill="#ffedd5" stroke="#f97316" stroke-width="2"/>
+      <text x="504" y="262" font-family="sans-serif" font-size="10" font-weight="bold" fill="#c2410c" text-anchor="middle">Wrap-up</text>
+      <text x="504" y="276" font-family="sans-serif" font-size="9" fill="#c2410c" text-anchor="middle">3:00 PM</text>
+    </g>
+  </g>
+
+  <!-- Floating Elements for "Pop" -->
+  <circle cx="700" cy="100" r="40" fill="#3b82f6" opacity="0.1"/>
+  <circle cx="90" cy="500" r="60" fill="#22c55e" opacity="0.1"/>
+  <rect x="650" y="400" width="100" height="100" rx="20" fill="#a855f7" opacity="0.05" transform="rotate(15 700 450)"/>
+
+</svg>

@@ -13,7 +13,7 @@ export default function Footer() {
                 <div className={styles.links}>
                     <Link href="/#services" className={styles.link}>Services</Link>
                     <Link href="/#work" className={styles.link}>My Work</Link>
-                    <a href="https://www.upwork.com/freelancers/~01a4bee13d5dcafff3" target="_blank" rel="noopener noreferrer" className={styles.link}>Upwork Profile</a>
+                    <a href="https://www.upwork.com/nx/find-work/best-matches/" target="_blank" rel="noopener noreferrer" className={styles.link}>Upwork Profile</a>
                     <a href="https://www.linkedin.com/in/rahab-kamau-504996186" target="_blank" rel="noopener noreferrer" className={styles.link}>LinkedIn</a>
                     <Link href="/#contact" className={styles.link}>Contact</Link>
                 </div>
