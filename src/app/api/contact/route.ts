@@ -48,19 +48,11 @@ export async function POST(request: Request) {
       `,
         };
 
-        // Send inquiry immediately
+        // Send both emails sequentially to ensure delivery on serverless platforms
         await transporter.sendMail(inquiryMailOptions);
+        await transporter.sendMail(confirmationMailOptions);
 
-        // Send confirmation after 6 seconds delay (non-blocking)
-        setTimeout(async () => {
-            try {
-                await transporter.sendMail(confirmationMailOptions);
-            } catch (err) {
-                console.error('Delayed confirmation error:', err);
-            }
-        }, 6000); // 6,000 ms = 6 seconds
-
-        return NextResponse.json({ success: true, message: 'Inquiry sent; confirmation following in 6 seconds.' }, { status: 200 });
+        return NextResponse.json({ success: true, message: 'Inquiry and confirmation sent successfully.' }, { status: 200 });
     } catch (error) {
         console.error('Email send error:', error);
         return NextResponse.json({ success: false, message: 'Failed to send email' }, { status: 500 });
